@@ -237,6 +237,29 @@ module.exports = grammar({
 });
 ```
 
+Then run `tree-sitter generate`
+
+```
+tree-sitter-balanced/
+├── Cargo.toml
+├── binding.gyp
+├── bindings
+│   ├── node
+│   │   ├── binding.cc
+│   │   └── index.js
+│   └── rust
+│       ├── build.rs
+│       └── lib.rs
+├── grammar.js
+├── package.json
+└── src
+    ├── grammar.json
+    ├── node-types.json
+    ├── parser.c
+    └── tree_sitter
+        └── parser.h
+```
+
 ## Thaughts & Feelings
 
 - Buck2 is very well engineered
