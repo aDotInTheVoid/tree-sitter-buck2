@@ -218,6 +218,25 @@ build   root//:use_c (prelude//platforms:default#524f8da68ea2a374) (cxx_compile 
 -Itree-sitter/lib/include
 ```
 
+## Building a parser
+
+**`tree-sitter-balanced/grammar.js`** 
+
+```js
+module.exports = grammar({
+  name: "balanced",
+  rules: {
+    bs: ($) => seq($.b, repeat($.b)),
+    b: ($) =>
+      choice(
+        seq("(", optional($.bs), ")"),
+        seq("{", optional($.bs), "}"),
+        seq("[", optional($.bs), "]")
+      ),
+  },
+});
+```
+
 ## Thaughts & Feelings
 
 - Buck2 is very well engineered
